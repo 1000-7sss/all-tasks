@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Университет</title>
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Система управления студентами</h1>
+
+    <section>
+      <h2>Добавить студента</h2>
+      <input type="text" id="studentName" placeholder="Имя" />
+      <input type="number" id="studentAge" placeholder="Возраст" />
+      <input type="email" id="studentEmail" placeholder="Email" />
+      <input type="text" id="studentId" placeholder="ID студента" />
+      <button onclick="addStudent()">Добавить</button>
+    </section>
+
+    <section>
+      <h2>Назначить оценку</h2>
+      <input type="text" id="gradeStudentId" placeholder="ID студента" />
+      <input type="text" id="gradeCourse" placeholder="Курс" />
+      <input type="number" id="gradeValue" placeholder="Оценка" />
+      <button onclick="assignGrade()">Назначить</button>
+    </section>
+
+    <section>
+      <h2>Студенты и GPA</h2>
+      <button onclick="renderStats()">Показать статистику</button>
+      <div id="statsOutput"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

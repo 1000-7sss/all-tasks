@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Викторина</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Стартовый экран -->
+    <section id="start-screen" class="screen active fade-in">
+      <h1>Викторина</h1>
+      <div class="settings">
+        <label>Категория:
+          <select id="category-select">
+            <option value="" disabled selected>— Выберите категорию —</option>
+          </select>
+        </label>
+        <label>Сложность:
+          <select id="difficulty-select">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <label>Время на вопрос (сек):
+          <input id="timer-input" type="number" min="5" max="60" value="15">
+        </label>
+      </div>
+      <button id="start-button" class="btn">Начать</button>
+    </section>
+
+    <!-- Экран викторины -->
+    <section id="quiz-screen" class="screen fade-in">
+      <div class="header">
+        <div id="progress-bar"><div id="progress"></div></div>
+        <div id="timer">00:00</div>
+      </div>
+      <div id="question-container">
+        <h2 id="question"></h2>
+        <ul id="options"></ul>
+      </div>
+      <div class="controls">
+        <button id="pause-button" class="btn secondary">Пауза</button>
+      </div>
+    </section>
+
+    <!-- Экран результатов -->
+    <section id="result-screen" class="screen fade-in">
+      <h2>Результаты</h2>
+      <p>Ваш счёт: <span id="score"></span></p>
+      <button id="restart-button" class="btn">Заново</button>
+      <button id="stats-button"   class="btn secondary">Статистика</button>
+    </section>
+
+    <!-- Экран статистики -->
+    <section id="stats-screen" class="screen fade-in">
+      <h2>Статистика</h2>
+      <ul id="stats-list"></ul>
+      <h3>Лучшие результаты</h3>
+      <ul id="best-list"></ul>
+      <button id="back-button" class="btn">Назад</button>
+    </section>
+  </div>
+
+  <!-- Звуки -->
+  <audio id="sound-correct" src="correct.wav" preload="auto"></audio>
+  <audio id="sound-wrong"   src="wrong.wav" preload="auto"></audio>
+  <audio id="sound-start"   src="start_sequence.wav" preload="auto"></audio>
+
+  <!-- Подключаем только главный скрипт как модуль -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

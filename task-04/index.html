@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Погода</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌤 Погода</h1>
+
+    <div class="theme-toggle">
+      <button id="themeBtn">🌙 Тема</button>
+    </div>
+
+    <div class="search">
+      <input type="text" id="cityInput" placeholder="Введите город..." />
+      <button onclick="searchWeather()">🔍</button>
+      <button onclick="getWeatherByLocation()">📍</button>
+    </div>
+
+    <div id="loading" class="hidden">Загрузка...</div>
+    <div id="error" class="error hidden"></div>
+
+    <div id="weather"></div>
+    <h2>Последние запросы:</h2>
+    <ul id="history"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

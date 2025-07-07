@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Список задач (ToDo)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    h1 { text-align: center; }
+    input, select, button {
+      padding: 8px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    ul { list-style: none; padding: 0; }
+    li {
+      background: white;
+      margin: 5px 0;
+      padding: 10px;
+      border-left: 5px solid gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    li.completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+    .high { border-color: red; }
+    .medium { border-color: orange; }
+    .low { border-color: green; }
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .filters > * {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ToDo Список</h1>
+
+  <div>
+    <input id="taskTitle" placeholder="Новая задача">
+    <select id="taskPriority">
+      <option value="low">Низкий</option>
+      <option value="medium" selected>Средний</option>
+      <option value="high">Высокий</option>
+    </select>
+    <button onclick="addTask()">Добавить</button>
+  </div>
+
+  <div class="filters">
+    <select id="statusFilter" onchange="renderTasks()">
+      <option value="all">Все</option>
+      <option value="completed">Выполненные</option>
+      <option value="pending">Активные</option>
+    </select>
+
+    <select id="sortFilter" onchange="renderTasks()">
+      <option value="date">Сортировка по дате</option>
+      <option value="priority">По приоритету</option>
+    </select>
+
+    <input id="searchInput" placeholder="Поиск..." oninput="renderTasks()">
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <div id="stats"></div>
+
+  <!-- Подключение внешнего скрипта -->
+  <script src="script.js"></script>
+</body>
+</html>
