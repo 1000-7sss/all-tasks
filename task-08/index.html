@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Planner SPA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h2>Categories</h2>
+      <ul id="category-list"></ul>
+      <h2>Filters</h2>
+      <input type="text" id="search-input" placeholder="Search tasks...">
+      <div id="filter-status">
+        <label><input type="checkbox" value="pending" checked> Pending</label>
+        <label><input type="checkbox" value="completed" checked> Completed</label>
+      </div>
+    </aside>
+    <main id="main-view">
+      <header>
+        <button id="view-list-btn">List View</button>
+        <button id="view-calendar-btn">Calendar View</button>
+        <button id="add-task-btn">+ New Task</button>
+      </header>
+      <section id="content"></section>
+    </main>
+  </div>
+
+  <!-- Task Modal -->
+  <div id="task-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">New Task</h2>
+      <form id="task-form">
+        <label>Title:<input type="text" name="title" required></label>
+        <label>Description:<textarea name="description"></textarea></label>
+        <label>Category:<input type="text" name="category"></label>
+        <label>Tags:<input type="text" name="tags" placeholder="comma separated"></label>
+        <label>Due Date:<input type="date" name="dueDate"></label>
+        <label>Priority:
+          <select name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+        <label>Status:
+          <select name="status">
+            <option value="pending" selected>Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </label>
+        <div class="modal-actions">
+          <button type="submit">Save</button>
+          <button type="button" id="modal-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
